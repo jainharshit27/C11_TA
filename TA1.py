@@ -21,12 +21,12 @@ vs_rect = [(1, -80), (1, 80), (-1, 80), (-1, -80)]    #These are vertices for ta
 #Create target_body.position and assign 600,400 for its position.
 #Add target_body and target_shape using space.add(target_body, target_shape).
 
-#Create bow_body and assign pymunk.Body(body_type=pymunk.Body.KINEMATIC) to create KINEMATIC body for bow.
-#Create bow_shape and assign pymunk.Circle(bow_body, 25) to give circular shape to bow.
-#Add a bow_shape.sensor as True
-#Add bow_shape.color as (255, 50, 50, 255)
-#Add bow_body.position and assign 100, 140 for its position.
-#Add bow_body and bow_shape to space using space.add()
+bow_body = pymunk.Body(body_type=pymunk.Body.KINEMATIC)
+bow_shape = pymunk.Circle(bow_body, 25)
+bow_shape.sensor = True
+bow_shape.color = (255, 50, 50, 255)
+bow_body.position = 100, 140
+space.add(bow_body, bow_shape)
 
 vs = [(-80, 0), (0, 2), (10, 0), (0, -2)]
 #Create arrow_body and assign pymunk.Body() with KINEMATIC body type.
